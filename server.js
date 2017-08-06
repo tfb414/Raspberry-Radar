@@ -1,68 +1,109 @@
 
 var util = require("util");
-const ws = require('ws');
+// const ws = require('ws');
+var app = require('http').createServer(handler)
+var io = require('socket.io')(app)
+var url = require('url')
+var fs = require('fs')
 
-var spawn = require("child_process").spawn;
-var Promise = require('es6-promise').Promise;
+io = require('socket.io')(app)
 
-const server = new ws.Server({port: 8080});
 
-server.on('connection', (socket)=>{
-    console.log('someone connected!');
-    console.log(temp);
-    socket.on('message', (msg)=>{
-        console.log("They said: " + msg);
-        server.clients.forEach((client)=> {
-            socket.send("I know you are but what am I?");
-            //this sends it to every website that has this open
-        })
-        
-    });
+
+
+//This will open a server at localhost:5000. Navigate to this in your browser.
+app.listen(8000);
+
+// Http handler function
+function handler (req, res) {
+
+    // Using URL to parse the requested URL
+    var path = url.parse(req.url).pathname;
+
+    // Managing the root route
+    if (path == '/') {
+        index = fs.readFile('/home/pi/thingspeak/servertest/index.html', 
+            function(error,data) {
+
+                if (error) {
+                    res.writeHead(500);
+                    return res.end("Error: unable to load index.html");
+                }
+
+                res.writeHead(200,{'Content-Type': 'text/html'});
+                res.end(data);
+            });
+    // Managing the route for the javascript files
+    } else if( /\.(js)$/.test(path) ) {
+        index = fs.readFile('/home/pi/thingspeak/servertest'+path, 
+            function(error,data) {
+
+                if (error) {
+                    res.writeHead(500);
+                    return res.end("Error: unable to load " + path);
+                }
+
+                res.writeHead(200,{'Content-Type': 'text/plain'});
+                res.end(data);
+            });
+    } else {
+        res.writeHead(404);
+        res.end("Error: 404 - File not found.");
+    }
+
+}
+
+io.sockets.on('connection', function (socket) {
+
+  // If we recieved a command from a client to start watering lets do so
+  socket.on('example-ping', function(data) {
+      console.log("ping");
+
+      delay = data["duration"];
+
+      // Set a timer for when we should stop watering
+      setTimeout(function(){
+          socket.emit("example-pong");
+      }, delay*1000);
+
+  });
+
 });
+// var spawn = require("child_process").spawn;
 
-// const http = require('http');
-// const server = http.createServer((req, res) => {
-//     //do stuff
-//     res.end('<h1>' + currentTemp + '</h1>');
-//     //this is a method and it ends the convo and send it off
-// });
+// util.log('Working...')
 
-// server.listen(8080);
+// var tempData = {}
+// var currentTemp;
 
-
-util.log('Working...')
-
-var tempData = {}
-var currentTemp;
-
-function runFile(){
+// function runFile(){
     
-    var processSensor = spawn('python',["sensor.py"]);
-    processSensor.stdout.on('data',function(chunk){
-        var textChunk = chunk.toString('utf8');
-        var numbers = textChunk.split("\n");
-        var temp = convertToFahrenheit(Number(numbers[0])).toFixed(2);
-        var humid = Number(numbers[1]).toFixed(2);
-        var date = Date.now()
-        addToData(date, temp, humid);
-        currentTemp = temp;
-        console.log(currentTemp);
-    });
-;};
+//     var processSensor = spawn('python',["sensor.py"]);
+//     processSensor.stdout.on('data',function(chunk){
+//         var textChunk = chunk.toString('utf8');
+//         var numbers = textChunk.split("\n");
+//         var temp = convertToFahrenheit(Number(numbers[0])).toFixed(2);
+//         var humid = Number(numbers[1]).toFixed(2);
+//         var date = Date.now()
+//         addToData(date, temp, humid);
+//         currentTemp = temp;
+//         console.log(currentTemp);
+//     });
+// ;};
 
 
-function convertToFahrenheit(number){
-    return number * 1.8 + 32;
-}
+// function convertToFahrenheit(number){
+//     return number * 1.8 + 32;
+// }
 
-function addToData(date, temp, humid){
-    tempData[date] = {};
-    tempData[date]['Temperature'] = temp
-    tempData[date]['Humidity'] = humid
-    console.log(tempData);
-}
+// function addToData(date, temp, humid){
+//     tempData[date] = {};
+//     tempData[date]['Temperature'] = temp
+//     tempData[date]['Humidity'] = humid
+//     console.log(tempData);
+// }
 
-setInterval(runFile, 5000);
+// setInterval(runFile, 5000);
 
 
 
