@@ -12,7 +12,7 @@ io = require('socket.io')(app)
 
 
 //This will open a server at localhost:5000. Navigate to this in your browser.
-app.listen(8000);
+app.listen(8080);
 
 // Http handler function
 function handler (req, res) {
@@ -53,6 +53,7 @@ function handler (req, res) {
 
 }
 
+
 io.sockets.on('connection', function (socket) {
 
   // If we recieved a command from a client to start watering lets do so
@@ -69,6 +70,8 @@ io.sockets.on('connection', function (socket) {
   });
 
 });
+
+
 // var spawn = require("child_process").spawn;
 
 // util.log('Working...')
