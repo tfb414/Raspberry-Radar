@@ -1,0 +1,92 @@
+header{
+    width:100%;
+    text-align: center;
+    
+}
+
+.whole-page{
+    height:100%;
+    width: 100%;
+}
+
+.top-level{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.left-half{
+    background: #2D352E;
+    display: flex;
+     flex-direction: column; 
+    margin: auto;
+    width: 100%;
+}
+
+.right-half{
+    /* height: 200px; */
+    /* width: 200px; */
+    background: #4C9A85;
+    display: flex;
+     flex-direction: column; 
+    margin: auto;
+    width: 100%;
+}
+
+.outer-info-box{
+    height: 130px;
+    width: 130px;
+    background-color: #4C9A85;
+    margin: 10px;
+
+    display: flex;
+    border-radius: 5%;
+}
+
+/* .outer-info-box + .outer-info-box{
+    margin-top: 10px;
+} */
+
+
+
+.inner-info-box{
+    height: 110px;
+    width: 110px;
+    background-color: #4D546E;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: white;
+    border-radius: 5%;
+}
+
+.top-row{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+.bottom-row{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    
+}
+
+.interior{
+    margin: 17.5px;
+    height: 400px;
+}
+
+.navbar-inverse{
+    margin-bottom: 0;
+}
+
+/* .navbar-header{
+    background-color: #4C9A85;
+} */

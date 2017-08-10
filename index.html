@@ -1,20 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Test</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-</head>
-<body>
-  <h1>The temperature is<span class = "temp"> loading</span> right now<h1>
-  <button id="hello" type="button">
-      Click me!
-  </button>
-</body>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
-  <!-- <script
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
   src="http://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script> -->
-  <script src="client.js"></script>
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <title>Tim Likes Weather Pi</title>
+</head>
+<body>
+    <!-- <header>Tim's Weather Station</header> -->
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="whole-page">
+        <div class="top-level">
+            <div class="left-half">
+                <div class="top-row">
+                    <div class="outer-info-box"><div class="inner-info-box" data-target = "temp-display"></div></div>
+                    <div class="outer-info-box"><div class="inner-info-box" data-target = "humid-display"></div></div>
+                </div>
+                <div class="bottom-row">
+                    <div class="outer-info-box"><div class="inner-info-box" data-target = "lotto-display">70</div></div>
+                    <div class="outer-info-box"><div class="inner-info-box" data-target = "lotto-display">50%</div></div>
+                </div>
+            </div>
+            <div class="right-half">
+                <div class="interior">
+                     <a class="twitter-timeline" href="https://twitter.com/TimfBrady" height="400">Tweets by TimfBrady</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8" ></script> 
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="temp"></div>
+    
+    <script src="client.js"></script>
+</body>
 </html>
