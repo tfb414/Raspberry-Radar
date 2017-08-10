@@ -19,20 +19,26 @@ function runFile(){
         var numbers = textChunk.split("\n");
         var temp = convertToFahrenheit(Number(numbers[1])).toFixed(1);
         var humid = Number(numbers[0]).toFixed(0);
-        var date = Date.now()
-        // console.log("this is in the sensor.js file " + temp);
-        // var data = addToData(date, temp, humid);
+        // var date = Date.now()
+        var dataToSendToClient = dataToSendToClientFn(temp, humid);
+        console.log(dataToSendToClient);
         var event = 'it-hot';
-        var event2 = 'it-humid';
-        myEE.emit(event, temp);
+        
+       
+        myEE.emit(event, dataToSendToClient);
 
         //json stringfy the object and send it
-        myEE.emit(event, humid)
     });
     
 };
 
-runFile;
+function dataToSendToClientFn(temp, humid){
+    var data = {
+        "temp": temp,
+        "humid": humid
+    };
+    return JSON.stringify(data);
+}
 
 function convertToFahrenheit(number){
     return number * 1.8 + 32;

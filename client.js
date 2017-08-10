@@ -4,16 +4,18 @@ let socket = new WebSocket('ws://timlikespi.local:8080');
 // socket.onmessage = (msg) => console.log(msg.data);
 // console.log('client.js')
 // socket.send('hi there! I am so friendly!');
-socket.onmessage = (temp) => {
-    console.log('temp');
-    console.log(temp);
-    $("[data-target = 'temp-display']").html(temp.data + "&deg")
+socket.onmessage = (msg) => {
+    var data = JSON.parse(msg.data);
+    console.log(data)
+    $("[data-target = 'temp-display']").html(data.temp + "&deg");
+    $("[data-target = 'humid-display']").html(data.humid + "%")
 };
 // socket.onmessage = (humid) => {
 //     console.log('humid');
 //     console.log(humid);
 //     $("[data-target = 'humid-display']").html(humid.data + "%")
 // };
+
 
 
 //from the server send out an object that has humid and temp
