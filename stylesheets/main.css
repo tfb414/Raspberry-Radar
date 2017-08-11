@@ -18,7 +18,7 @@ header{
 
 
 .left-half{
-    background: #2D352E;
+    background: #D3E8E1;
     display: flex;
      flex-direction: column; 
     margin: auto;
@@ -28,7 +28,7 @@ header{
 .right-half{
     /* height: 200px; */
     /* width: 200px; */
-    background: #4C9A85;
+    background: #013E53;
     display: flex;
      flex-direction: column; 
     margin: auto;
@@ -38,7 +38,7 @@ header{
 .outer-info-box{
     height: 130px;
     width: 130px;
-    background-color: #4C9A85;
+    background-color: #DFC031;
     margin: 10px;
 
     display: flex;
@@ -49,18 +49,19 @@ header{
     margin-top: 10px;
 } */
 
+/* 8DACA6  */
 
 
 .inner-info-box{
     height: 110px;
     width: 110px;
-    background-color: #4D546E;
+    background-color: #013E53;
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    color: white;
+    color: #D3E8E1;
     border-radius: 5%;
 }
 
@@ -90,3 +91,7 @@ header{
 /* .navbar-header{
     background-color: #4C9A85;
 } */
+
+@media (min-width: 700px) {
+    
+}
