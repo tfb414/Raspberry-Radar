@@ -1,3 +1,8 @@
+/* html{
+    max-width: 1200px;
+    margin: auto;
+} */
+
 header{
     width:100%;
     text-align: center;
@@ -15,6 +20,7 @@ header{
     align-items: center;
     justify-content: center;
 }
+
 
 
 .left-half{
@@ -60,9 +66,24 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
+    
     color: #D3E8E1;
     border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-titles{
+    font-size: 15px;
+    text-align: center;
+}
+
+.fa-cog{
+    font-size: 10px;
+}
+
+.inner-info-titles{
+    font-size: 40px;
 }
 
 .top-row{
@@ -82,6 +103,9 @@ header{
 .interior{
     margin: 17.5px;
     height: 400px;
+    margin: auto;
+    max-width: 282px;
+    margin-top: 10px
 }
 
 .navbar-inverse{
@@ -93,5 +117,21 @@ header{
 }
 
 @media (min-width: 700px) {
+    .top-level{
+        flex-direction: row;
+    }
 
+    .left-half{
+        margin:0;
+        height: 100%;
+    }
+
+    .whole-page{
+    }
 }
+
+/* #twitter-widget-0 { 
+    max-width: 250px !important; 
+    
+  } */
+

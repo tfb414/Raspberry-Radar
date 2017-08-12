@@ -5,6 +5,7 @@ const server = require('./server.js')
 function main() {
   notifier.init();
   console.log("main.js")
+  
   sensor.addHotListener((temp)=>{
     console.log("It should be broadcasting temp");
     notifier.broadcast(temp);

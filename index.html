@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="stylesheets/main.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/2e1d0f3462.js"></script>
     <title>Tim Likes Weather Pi</title>
 </head>
 <body>
@@ -42,17 +43,17 @@
         <div class="top-level">
             <div class="left-half">
                 <div class="top-row">
-                    <div class="outer-info-box"><div class="inner-info-box" data-target = "temp-display"></div></div>
-                    <div class="outer-info-box"><div class="inner-info-box" data-target = "humid-display"></div></div>
+                    <div class="outer-info-box"><div class="inner-info-box"><div class="info-titles">Current Temperature<div data-target = "temp-display" class = "inner-info-titles"><i class="fa fa-cog fa-spin fa-lg fa-fw"></i><span class="sr-only">Loading...</span></i></div></div></div></div>
+                    <div class="outer-info-box"><div class="inner-info-box"><div class="info-titles">Current Humidity<div data-target = "humid-display" class = "inner-info-titles"><i class="fa fa-cog fa-spin fa-lg fa-fw"></i><span class="sr-only">Loading...</span></div></div></div></div>
                 </div>
                 <div class="bottom-row">
-                    <div class="outer-info-box"><div class="inner-info-box" data-target = "lotto-display">70</div></div>
-                    <div class="outer-info-box"><div class="inner-info-box" data-target = "lotto-display">50%</div></div>
+                    <div class="outer-info-box"><div class="inner-info-box"><div class="info-titles">Soil Moisture<div data-target = "#" class = "inner-info-titles">70%</div></div></div></div>
+                    <div class="outer-info-box"><div class="inner-info-box"><div class="info-titles">Something Else<div data-target = "#" class = "inner-info-titles">35</div></div></div></div>
                 </div>
             </div>
             <div class="right-half">
                 <div class="interior">
-                     <a class="twitter-timeline" href="https://twitter.com/timsbattlebot" height="400">Tweets by TimfBrady</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8" ></script> 
+                     <a class="twitter-timeline" href="https://twitter.com/timsbattlebot" >Tweets by TimfBrady</a><script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script> 
                 </div>
             </div>
             
