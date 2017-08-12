@@ -33,18 +33,23 @@ function runFile(){
 };
 
 var client = new Twitter({
- consumer_key: process.env.consumer_key
- consumer_secret: process.env.consumer_secret
- access_token_key: process.env.access_token_key
+ consumer_key: process.env.consumer_key,
+ consumer_secret: process.env.consumer_secret,
+ access_token_key: process.env.access_token_key,
  access_token_secret: process.env.access_token_secret
+//  process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 });
 
-var params = {screen_name: 'nodejs'};
-client.get('statuses/user_timeline', params, function(error, tweets, response) {
- if (!error) {
-   console.log(tweets);
- }
-});
+
+client.post('statuses/update', {status: 'I Love Twitter'})
+.then(function (tweet) {
+  console.log(tweet);
+})
+.catch(function (error) {
+  throw error;
+})
+
+
 
 function dataToSendToClientFn(temp, humid){
     var data = {
