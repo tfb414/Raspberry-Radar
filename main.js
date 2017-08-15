@@ -1,6 +1,6 @@
 const notifier = require('./notifier');
-const sensor = require('./sensorJS')
-const server = require('./server.js')
+const sensor = require('./sensorJS');
+const server = require('./server.js');
 
 function main() {
   notifier.init();
