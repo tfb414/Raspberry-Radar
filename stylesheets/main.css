@@ -2,49 +2,46 @@
 header{
     width:100%;
     text-align: center;
-    
+    background-color: #013E53;
+    height: 60px;
 }
-
+header h1{
+    margin: 0px;
+    padding: 10px;
+    color: white;
+}
 .whole-page{
-    
     width: 100%;
 }
-
 .top-level{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-   
+    justify-content: center;  
 }
-
-
-
 .left-half{
     background: #DCF0F7;
     display: flex;
-     flex-direction: column; 
+    flex-direction: column; 
     margin: auto;
-    width: 100%;
-    
+    width: 100%;   
+    height: 100%;
 }
-
 .right-half{
     /* height: 200px; */
     /* width: 200px; */
     background: #bd3244;
     display: flex;
-     flex-direction: column; 
-    margin: auto;
+    flex-direction: column; 
+    /* margin: auto; */
     width: 100%;
+    height:100%;
 }
-
 .outer-info-box{
     height: 130px;
     width: 130px;
     background-color: #bd3244;
     margin: 10px;
-
     display: flex;
     border-radius: 5%;
 }
@@ -54,8 +51,6 @@ header{
 } */
 
 /* 8DACA6  */
-
-
 .inner-info-box{
     height: 110px;
     width: 110px;
@@ -64,26 +59,21 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    
     color: white;
     border-radius: 5%;
     display: flex;
     flex-direction: column;
 }
-
 .info-titles{
     font-size: 15px;
     text-align: center;
 }
-
 .fa-cog{
     font-size: 10px;
 }
-
 .inner-info-titles{
     font-size: 40px;
 }
-
 .top-row{
     justify-content: center;
     display: flex;
@@ -94,13 +84,12 @@ header{
     justify-content: center;
     display: flex;
     flex-direction: row;
-    margin: auto;
-    
+    margin: auto;  
 }
 
 .interior{
     margin: 17.5px;
-    height: 400px;
+    height: 100%;
     margin: auto;
     max-width: 282px;
     margin-top: 10px
@@ -115,6 +104,7 @@ header{
 }
 
 @media (min-width: 700px) {
+    
     html{
         height:100%;
     }
@@ -131,10 +121,17 @@ header{
         margin:0;
         height: 100%;
     }
-
-    .whole-page{
-       height: 100%; 
+    
+    .right-half{
+        height:100%;
     }
+    .interior{
+        height: 100%;
+    }
+
+    /* .whole-page{
+       height: 100%; 
+    } */
 }
 
 /* #twitter-widget-0 { 
