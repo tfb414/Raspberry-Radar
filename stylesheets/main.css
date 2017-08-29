@@ -10,6 +10,19 @@ header h1{
     padding: 10px;
     color: white;
 }
+.footer{
+	background-color: #013E53;
+    padding:10px 0 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.copyright, .credits{
+	color:#cccccc;
+	font-size:14px;
+	display:block;
+	text-align:center;
+}
 .whole-page{
     width: 100%;
 }
@@ -92,7 +105,7 @@ header h1{
     height: 100%;
     margin: auto;
     max-width: 282px;
-    margin-top: 10px
+    margin-top: 30px
 }
 
 .navbar-inverse{
@@ -108,17 +121,20 @@ header h1{
     html{
         height:100%;
     }
-    
     body{
         height: 100%;
     }
     .top-level{
+        display:flex;
         flex-direction: row;
-        height:100%
+        height:100%;
+        align-items: center;
+        justify-content: center; 
     }
 
     .left-half{
-        margin:0;
+        margin:0px;
+        padding: 0px;
         height: 100%;
     }
     
@@ -128,10 +144,18 @@ header h1{
     .interior{
         height: 100%;
     }
-
-    /* .whole-page{
+    
+    .whole-page{
        height: 100%; 
-    } */
+    }
+    .bottom-row{
+        margin-top: 0px;
+    }
+    .top-row{
+        margin-bottom: 0px;
+        margin-top: 20px;
+    }
+   
 }
 
 /* #twitter-widget-0 { 
